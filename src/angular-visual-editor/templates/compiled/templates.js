@@ -1,0 +1,1 @@
+angular.module("angularVisualEditor.directives").run(["$templateCache", function($templateCache) {$templateCache.put("ave-main.html","<div>Main div: {{test}}</div>");}]);

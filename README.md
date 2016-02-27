@@ -1,1 +1,2 @@
-# angular-visual-editor
+# Angular Visual Editor
+
