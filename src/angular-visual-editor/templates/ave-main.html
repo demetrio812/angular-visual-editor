@@ -1,1 +1,45 @@
-<div>Main div: {{test}}</div>
+<div>
+  <style>
+    .tools, .elements, .preview {
+      border: 1px solid red;
+      min-height: 100px;
+      padding: 4px;
+      margin: 4px;
+    }
+
+    .tool, .element {
+      border: 1px solid green;
+      min-height: 30px;
+      padding: 2px;
+      margin: 2px;
+    }
+
+    .tool {
+      display: inline-block;
+    }
+  </style>
+  Main div: {{test}}
+  <div class="tools">
+    <div class="tool"
+         data-drag="true" data-drop="true" ng-model='tools'
+         jqyoui-draggable="{index: {{$index}},animate:true}" jqyoui-droppable="{index: {{$index}}}"
+         data-jqyoui-options="{revert: 'invalid'}"
+         ng-repeat="tool in tools">
+      {{tool.id}}-{{tool.name}}
+    </div>
+  </div>
+  <div class="elements"
+       jqyoui-droppable="{multiple:true}"
+       data-drop="true" ng-model='textDescriptor.elements'>
+    <div class="element" ng-repeat="element in textDescriptor.elements"
+         data-drag="true"  ng-model="textDescriptor.elements"
+         jqyoui-draggable="{index: {{$index}},animate:true}"
+         data-jqyoui-options="{revert: 'invalid'}">
+      {{element}}
+    </div>
+  </div>
+  <div class="preview">
+    <div>Preview:</div>
+    {{textDescriptor.text}}
+  </div>
+</div>

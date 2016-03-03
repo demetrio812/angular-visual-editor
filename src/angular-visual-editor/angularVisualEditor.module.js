@@ -19,7 +19,8 @@
       'angularVisualEditor.config',
       'angularVisualEditor.directives',
       'angularVisualEditor.filters',
-      'angularVisualEditor.services'
+      'angularVisualEditor.services',
+      'ngDragDrop'
     ]);
 
 })(angular);
