@@ -22,8 +22,8 @@
   <div class="tools">
     <div class="tool"
          data-drag="true" data-drop="true" ng-model='tools'
-         jqyoui-draggable="{index: {{$index}},animate:true}" jqyoui-droppable="{index: {{$index}}}"
-         data-jqyoui-options="{revert: 'invalid'}"
+         jqyoui-draggable="{index: {{$index}},animate:true, placeholder: 'keep'}" jqyoui-droppable="{index: {{$index}}}"
+         data-jqyoui-options="{revert: 'invalid', helper: 'clone'}"
          ng-repeat="tool in tools">
       {{tool.id}}-{{tool.name}}
     </div>
@@ -34,7 +34,7 @@
     <div class="element" ng-repeat="element in textDescriptor.elements"
          data-drag="true"  ng-model="textDescriptor.elements"
          jqyoui-draggable="{index: {{$index}},animate:true}"
-         data-jqyoui-options="{revert: 'invalid'}">
+         data-jqyoui-options="{revert: 'invalid', helper: 'clone'}">
       {{element}}
     </div>
   </div>
