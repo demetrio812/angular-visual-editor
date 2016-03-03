@@ -17,6 +17,7 @@
     .tool {
       display: inline-block;
     }
+
   </style>
   Main div: {{test}}
   <div class="tools">
@@ -28,13 +29,15 @@
       {{tool.id}}-{{tool.name}}
     </div>
   </div>
-  <div class="elements"
-       jqyoui-droppable="{multiple:true}"
-       data-drop="true" ng-model='textDescriptor.elements'>
+  <div class="elements" jqyoui-droppable="{multiple:true}"
+       data-drop="true" ng-model="textDescriptor.elements">
     <div class="element" ng-repeat="element in textDescriptor.elements"
          data-drag="true"  ng-model="textDescriptor.elements"
-         jqyoui-draggable="{index: {{$index}},animate:true}"
-         data-jqyoui-options="{revert: 'invalid', helper: 'clone'}">
+         jqyoui-draggable="{index: {{$index}},animate:true, insertInline: true, direction:'jqyouiDirection'}"
+         data-direction="{{element.jqyouiDirection}}"
+         data-jqyoui-options="{revert: 'invalid', helper: 'clone'}"
+         jqyoui-droppable="{index: {{$index}},multiple:true}"
+         data-drop="true">
       {{element}}
     </div>
   </div>
